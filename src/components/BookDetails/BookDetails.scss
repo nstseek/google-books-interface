@@ -1,0 +1,28 @@
+div.BookDetails {
+  padding: 13px;
+  background-color: #222;
+  color: white;
+  border-radius: 13px;
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 80vh;
+  max-width: Min(90vw, 600px);
+  div.book-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 0 34px;
+    padding-bottom: 34px;
+    h3.book-title {
+      text-align: center;
+    }
+    p.field {
+      span.title {
+        font-weight: 800;
+      }
+    }
+  }
+}
