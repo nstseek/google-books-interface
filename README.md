@@ -8,6 +8,10 @@ Essa aplicação foi desenvolvida para completar o teste técnico proposto para 
 
 Esse projeto foi desenvolvido utilizando algumas das mais recentes tecnologias com o React (como React Hooks), TypeScript, Jest, Enzyme, SCSS, Axios, Puppeteer e algumas outras bibliotecas de minha autoria, como [@nstseek/react-ui](https://www.npmjs.com/package/@nstseek/react-ui).
 
+### Redux
+
+A decisão de não utilizar Redux nesse projeto se deve ao tamanho da aplicação. O Redux não se fez necessário aqui, os recursos que o framework(React) nos proporciona são mais do que suficientes para o desenvolvimento da aplicação. Não é uma adequado utilizar tecnologias onde não é necessário, aumentando a complexidade do projeto sem um real benefício em troca.
+
 ## Documentação
 
 O projeto possui uma cobertura de documentação razoável utilizando [JSDOC](https://jsdoc.app/) em cada componente e interface relevante da aplicação. Caso a sua IDE suporte, basta você passar o mouse sobre um componente e verá uma descrição a respeito do mesmo, explicando qual o propósito daquele componente/variável/interface. Segue um exemplo no link abaixo para demonstrar a funcionalidade funcionando no Visual Studio Code
