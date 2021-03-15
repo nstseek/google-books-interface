@@ -6,7 +6,7 @@ Essa aplicação foi desenvolvida para completar o teste técnico proposto para 
 
 ## Tecnologias
 
-Esse projeto foi desenvolvido utilizando algumas das mais recentes tecnologias como React (com Hooks e Context API), TypeScript, Jest, Enzyme, SCSS, Axios e algumas outras bibliotecas de minha autoria, como [@nstseek/react-ui](https://www.npmjs.com/package/@nstseek/react-ui).
+Esse projeto foi desenvolvido utilizando algumas das mais recentes tecnologias com o React (como React Hooks), TypeScript, Jest, Enzyme, SCSS, Axios, Puppeteer e algumas outras bibliotecas de minha autoria, como [@nstseek/react-ui](https://www.npmjs.com/package/@nstseek/react-ui).
 
 ## Documentação
 
@@ -30,7 +30,7 @@ O projeto também possui uma cobertura superficial de testes end-to-end apenas p
 
 ## Flow de trabalho
 
-O projeto possui uma série de filtros para garantir a qualidade do código criado, como [linters](https://eslint.org/), [formatters](https://prettier.io/) e [testes unitários](https://jestjs.io/en/) com [framework específico](https://enzymejs.github.io/enzyme/) que rodam toda vez que o desenvolvedor tenta realizar o push para o repositório através dos git hooks. Esse projeto utiliza o pacote [husky](https://www.npmjs.com/package/husky) que torna muito simples a configuração de git hooks em qualquer repositório Git. Toda vez que o desenvolvedor tenta realizar o push, o script [npm run check](https://github.com/nstseek/google-books-interface/blob/5e0b1780bf86f23bad5d54f915c2e5c147a49bde/package.json#L44) [roda antes que o push seja efetuado](https://github.com/nstseek/google-books-interface/blob/5e0b1780bf86f23bad5d54f915c2e5c147a49bde/package.json#L92), garantindo que o código que está sendo enviado passa em todos os testes e builda corretamente.
+O projeto possui uma série de filtros para garantir a qualidade do código criado, como [linters](https://eslint.org/), [formatters](https://prettier.io/) e [testes unitários](https://jestjs.io/en/) com um [wrapper específico](https://enzymejs.github.io/enzyme/) que rodam toda vez que o desenvolvedor tenta realizar o push para o repositório através dos git hooks. Esse projeto utiliza o pacote [husky](https://www.npmjs.com/package/husky) que torna muito simples a configuração de git hooks em qualquer repositório Git. Toda vez que o desenvolvedor tenta realizar o push, o script [npm run check](https://github.com/nstseek/google-books-interface/blob/0a1278989bf1a95ad667fe4e06ca02cf585d25c4/package.json#L41) [roda antes que o push seja efetuado](https://github.com/nstseek/google-books-interface/blob/0a1278989bf1a95ad667fe4e06ca02cf585d25c4/package.json#L92), garantindo que o código que está sendo enviado passa em todos os testes e builda corretamente.
 
 ## Scripts disponíveis
 
