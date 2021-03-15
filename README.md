@@ -10,8 +10,7 @@ Esse projeto foi desenvolvido utilizando algumas das mais recentes tecnologias c
 
 ### Redux
 
-A decisão de não utilizar Redux nesse projeto se deve ao tamanho da aplicação. O Redux não se fez necessário aqui, os recursos que o framework(React) nos proporciona são mais do que suficientes para o desenvolvimento da aplicação. Não é uma adequado utilizar tecnologias onde não é necessário, aumentando a complexidade do projeto sem um real benefício em troca.
-
+A decisão de não utilizar Redux nesse projeto se deve ao tamanho da aplicação. O Redux não se fez necessário aqui, os recursos que o framework(React) nos proporciona são mais do que suficientes para o desenvolvimento da aplicação. A aplicação não possui um gerenciamento de estado complexo nem possui vários níveis de componente compartilhando dados, a profundidade máxima de componentes que trocam dados é de 1. Uma ferramenta de gerenciamento de estado como Redux ou Context API não é seria adequado, pois o benefício seria nulo e a complexidade do projeto aumentaria. Sempre torne o seu código o mais simples possível. 
 ## Documentação
 
 O projeto possui uma cobertura de documentação razoável utilizando [JSDOC](https://jsdoc.app/) em cada componente e interface relevante da aplicação. Caso a sua IDE suporte, basta você passar o mouse sobre um componente e verá uma descrição a respeito do mesmo, explicando qual o propósito daquele componente/variável/interface. Segue um exemplo no link abaixo para demonstrar a funcionalidade funcionando no Visual Studio Code
