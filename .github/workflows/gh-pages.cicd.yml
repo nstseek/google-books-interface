@@ -1,0 +1,31 @@
+name: CI/CD
+'on':
+  push:
+    branches:
+      - master
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v2
+      - name: Install node v10
+        uses: actions/setup-node@v2
+        with:
+          node-version: '10'
+      - name: Install packages
+        run: npm install
+      - name: Run checks and build
+        run: npm run check:ci
+      - name: Publish Unit Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v1.6
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          files: ./*.xml
+      # - name: Deploy to GitHub Pages
+      #   uses: crazy-max/ghaction-github-pages@v1
+      #   with:
+      #     target_branch: gh-pages
+      #     build_dir: build
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.YOUR_SECRET_NAME }}
