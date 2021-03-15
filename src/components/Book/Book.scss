@@ -1,0 +1,30 @@
+div.Book {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  grid-template-rows: 1fr;
+  padding: 8px 13px;
+  border: 1px solid #999;
+  border-radius: 13px;
+  align-items: center;
+  margin: 8px 0;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.2);
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  &:active {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  img.book-thumb {
+    align-self: center;
+    justify-self: center;
+    margin: 0 8px;
+    height: 100px;
+    max-width: 100%;
+    border-radius: 13px;
+    border: 1px solid #555;
+  }
+  h3.book-title {
+    margin-left: 13px;
+  }
+}
