@@ -1,0 +1,65 @@
+@import '../../styles/colors.scss';
+
+div.BookList {
+  display: flex;
+  flex-direction: column;
+  padding: 13px 0;
+  div.query {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 0;
+    label {
+      color: $secondary-text;
+      margin-bottom: 8px;
+    }
+    input {
+      width: 100%;
+      background-color: $secondary-background;
+      color: $secondary-text;
+      padding: 8px 13px;
+      border-radius: 15px;
+      border: 1px solid transparent;
+      &:focus {
+        background-color: $primary-background;
+        color: $primary-text;
+        outline: none;
+        border: 1px solid #777;
+      }
+    }
+  }
+  div.list {
+    $border: 1px solid white;
+    flex: 1;
+    overflow-y: auto;
+    &.has-data {
+      border-top: $border;
+      border-bottom: $border;
+    }
+  }
+  div.controls {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    div.mail-buttons {
+      display: flex;
+      flex-direction: column;
+      & > button {
+        margin: 8px 0;
+      }
+    }
+    div.navigators {
+      display: flex;
+      & > button {
+        font-size: 15pt;
+        margin: auto 8px;
+        &.hidden {
+          visibility: hidden;
+        }
+      }
+    }
+  }
+  h5.result-info {
+    margin: 8px 0;
+  }
+}
