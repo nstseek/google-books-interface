@@ -1,6 +1,5 @@
 # Google Books Interface
-
-[![CI/CD](https://github.com/nstseek/google-books-interface/actions/workflows/gh-pages.cicd.yml/badge.svg)](https://github.com/nstseek/google-books-interface/actions/workflows/gh-pages.cicd.yml)
+[![CI/CD](https://github.com/nstseek/google-books-interface/actions/workflows/firebase-hosting-pull-request.yml/badge.svg)](https://github.com/nstseek/google-books-interface/actions/workflows/firebase-hosting-pull-request.yml)
 
 Essa aplicação foi desenvolvida para completar o teste técnico proposto para a vaga de desenvolvedor front-end. Você pode visualizar a aplicação funcionando em [https://gb-interface.web.app](https://gb-interface.web.app). Você também pode visualizar o estado das builds e deploys de cada commit visualizando o histórico de commits [aqui](https://github.com/nstseek/google-books-interface/commits/master) ou vendo o estado dos workflows do repositório [aqui](https://github.com/nstseek/google-books-interface/actions).
 
