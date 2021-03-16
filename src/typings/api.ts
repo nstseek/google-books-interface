@@ -11,7 +11,7 @@ interface ApiResponse<T = any> {
   /**
    * Contém os dados resultantes da pesquisa realizada
    */
-  items: T[];
+  items: T;
 }
 
 /**
@@ -50,6 +50,10 @@ export interface Book {
      * Define a data de publicação do livro
      */
     publishedDate: string;
+    /**
+     * Define a editora que publicou o livro
+     */
+    publisher: string;
     /**
      * Define a descrição do livro
      */
@@ -122,11 +126,24 @@ export interface Book {
     /**
      * Disponibilidade do livro para venda
      */
-    saleability: string;
+    saleability: 'FOR_SALE' | 'NOT_FOR_SALE';
     /**
      * Define se a venda referida é como ebook ou livro físico
      */
     isEbook: boolean;
+    /**
+     * Define o preço do livro
+     */
+    retailPrice: {
+      /**
+       * Define o valor de venda
+       */
+      amount: number;
+      /**
+       * Define a moeda utilizada na venda
+       */
+      currencyCode: 'BRL' | 'USD';
+    };
   };
   accessInfo: {
     country: string;
@@ -152,7 +169,7 @@ export interface Book {
 /**
  * Define o modelo completo de resposta da API para uma query
  */
-export type BookResponse = ApiResponse<Book>;
+export type BookQueryResponse = ApiResponse<Book[]>;
 
 /**
  * Define os query parameters aceitos pela API ao fazer a query

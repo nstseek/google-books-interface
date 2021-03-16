@@ -5,14 +5,11 @@ div.BookList {
   flex-direction: column;
   padding: 13px 0;
   div.query {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 8px 0;
-    label {
-      color: $secondary-text;
-      margin-bottom: 8px;
-    }
     input {
       width: 100%;
       background-color: $secondary-background;
@@ -27,11 +24,40 @@ div.BookList {
         border: 1px solid #777;
       }
     }
+    i {
+      position: absolute;
+      right: 13px;
+      top: -2px;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      &.loading {
+        top: -1px;
+        font-size: 1.2rem;
+      }
+    }
   }
   div.list {
     $border: 1px solid white;
     flex: 1;
     overflow-y: auto;
+    position: relative;
+    & > h3 {
+      text-align: center;
+    }
+    div.loading {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      width: 100%;
+      height: 100%;
+      font-size: 3rem;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     &.has-data {
       border-top: $border;
       border-bottom: $border;
@@ -51,15 +77,49 @@ div.BookList {
     div.navigators {
       display: flex;
       & > button {
+        display: flex;
+        align-items: center;
         font-size: 15pt;
         margin: auto 8px;
-        &.hidden {
-          visibility: hidden;
+        span.desc {
+          font-size: 0.8rem;
+          &:first-child {
+            margin-right: 8px;
+          }
+          &:last-child {
+            margin-left: 8px;
+          }
+        }
+        &:disabled {
+          opacity: 0.5;
+        }
+        &.filter {
+          i {
+            font-size: 0.8rem;
+          }
+          &.active {
+            background-color: white;
+            span.desc,
+            i {
+              color: black;
+            }
+          }
         }
       }
     }
   }
   h5.result-info {
     margin: 8px 0;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  div.BookList {
+    div.controls {
+      div.navigators {
+        width: 100%;
+        justify-content: space-evenly;
+      }
+    }
   }
 }

@@ -1,4 +1,5 @@
 import { shallow } from 'enzyme';
+import { BrowserRouter } from 'react-router-dom';
 import BookDetails from './BookDetails';
 
 describe('<BookDetails />', () => {
@@ -6,7 +7,9 @@ describe('<BookDetails />', () => {
 
   beforeEach(() => {
     component = shallow(
-      <BookDetails book={{ volumeInfo: {} } as any} close={() => null} />
+      <BrowserRouter>
+        <BookDetails />
+      </BrowserRouter>
     );
   });
 

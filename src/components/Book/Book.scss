@@ -1,6 +1,6 @@
 div.Book {
   display: grid;
-  grid-template-columns: 100px 1fr;
+  grid-template-columns: 100px 1fr 35px;
   grid-template-rows: 1fr;
   padding: 8px 13px;
   border: 1px solid #999;
@@ -25,6 +25,8 @@ div.Book {
     border: 1px solid #555;
   }
   h3.book-title {
-    margin-left: 13px;
+    padding: 0 13px;
+    width: 100%;
+    overflow: hidden;
   }
 }

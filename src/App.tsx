@@ -4,8 +4,10 @@ import './App.scss';
 import { ReactUIContext, useRootContext } from '@nstseek/react-ui/context';
 import { ModalWarning } from '@nstseek/react-ui/components';
 import BookList from 'components/BookList/BookList';
-import Loading from 'components/Loading/Loading';
 import 'moment/locale/pt-br';
+import { Redirect, Route, Switch } from 'react-router';
+import routes from 'routes';
+import BookDetails from 'components/BookDetails/BookDetails';
 
 /**
  * Define o sistema de partículas rodando no fundo da aplicação
@@ -82,12 +84,20 @@ const App: React.FC = () => {
   return (
     <ReactUIContext.Provider value={uiRootCtx}>
       <ModalWarning />
-      <Loading />
       <div className='App'>
-        <Particles className='particles' params={particlesParam} />
+        <h1 className='title'>Google Books Interface</h1>
         <div className='main-container'>
-          <BookList />
+          <Switch>
+            <Route path={routes.home}>
+              <BookList />
+            </Route>
+            <Route path={routes.livro + ':id'}>
+              <BookDetails />
+            </Route>
+            <Redirect to={routes.home} />
+          </Switch>
         </div>
+        <Particles className='particles' params={particlesParam} />
       </div>
     </ReactUIContext.Provider>
   );

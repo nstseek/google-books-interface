@@ -1,27 +1,110 @@
 div.BookDetails {
-  padding: 13px;
-  background-color: #222;
   color: white;
-  border-radius: 13px;
-  border: 1px solid white;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-height: 80vh;
-  max-width: Min(90vw, 600px);
+  div.loading {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+  }
   div.book-content {
     width: 100%;
+    height: 100%;
     display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    padding: 0 34px;
-    padding-bottom: 34px;
-    h3.book-title {
-      text-align: center;
+    div.book {
+      &-cover {
+        display: flex;
+        justify-content: center;
+        flex: 1;
+        img {
+          width: max-content;
+          height: max-content;
+        }
+      }
+      &-details {
+        padding-left: 13px;
+        flex: 4;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        .book {
+          &-header {
+            padding: 8px 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            div.book {
+              &-title-author-year {
+                display: flex;
+                flex-direction: column;
+                h3.book-title {
+                  margin: 0 0 5px 0;
+                }
+                h5.book-authors {
+                  margin: 3px 0 0 0;
+                }
+                h6.book-year {
+                  margin: 3px 0 0 0;
+                }
+              }
+              &-price {
+                h4.price {
+                  margin: 0;
+                }
+              }
+            }
+          }
+          &-info {
+            display: flex;
+            margin-top: 21px;
+            width: 100%;
+            div.info {
+              display: flex;
+              flex: 1;
+              flex-direction: column;
+              span.info {
+                &-title {
+                  font-weight: 600;
+                  margin-bottom: 5px;
+                }
+                &-content {
+                  font-size: 0.9rem;
+                }
+              }
+            }
+          }
+          &-desc {
+            margin: 34px 0 0 0;
+            font-size: 0.9rem;
+          }
+        }
+        div.buttons {
+          display: flex;
+          margin: 21px 0;
+          button {
+            padding: 8px 13px;
+            &:not(:first-child) {
+              margin-left: 8px;
+            }
+          }
+        }
+      }
     }
-    p.field {
-      span.title {
-        font-weight: 800;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  div.BookDetails {
+    div.book-content {
+      flex-direction: column;
+      div.book-cover {
+        margin-bottom: 8px;
       }
     }
   }
