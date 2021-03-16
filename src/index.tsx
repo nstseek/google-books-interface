@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
-  <BrowserRouter basename='/google-books-interface'>
+  <BrowserRouter>
     <App />
   </BrowserRouter>,
   document.getElementById('root')

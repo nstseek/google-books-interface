@@ -2,7 +2,7 @@
 
 [![CI/CD](https://github.com/nstseek/google-books-interface/actions/workflows/gh-pages.cicd.yml/badge.svg)](https://github.com/nstseek/google-books-interface/actions/workflows/gh-pages.cicd.yml)
 
-Essa aplicação foi desenvolvida para completar o teste técnico proposto para a vaga de desenvolvedor front-end. Você pode visualizar a aplicação funcionando em [https://nstseek.github.io/google-books-interface/](https://nstseek.github.io/google-books-interface/). Você também pode visualizar o estado das builds e deploys de cada commit visualizando o histórico de commits [aqui](https://github.com/nstseek/google-books-interface/commits/master) ou vendo o estado dos workflows do repositório [aqui](https://github.com/nstseek/google-books-interface/actions).
+Essa aplicação foi desenvolvida para completar o teste técnico proposto para a vaga de desenvolvedor front-end. Você pode visualizar a aplicação funcionando em [https://gb-interface.web.app](https://gb-interface.web.app). Você também pode visualizar o estado das builds e deploys de cada commit visualizando o histórico de commits [aqui](https://github.com/nstseek/google-books-interface/commits/master) ou vendo o estado dos workflows do repositório [aqui](https://github.com/nstseek/google-books-interface/actions).
 
 ## Tecnologias
 
@@ -22,7 +22,7 @@ Caso a sua IDE não suporte a notação [JSDOC](https://jsdoc.app/), basta ler o
 
 ## Continuous Integration and Continuous Deployment (CI/CD)
 
-Um [processo de CI/CD simples](https://github.com/nstseek/google-books-interface/actions?query=workflow%3ACI%2FCD) foi implementado nesse projeto utilizando as Actions do GitHub. Toda vez que algum commit é adicionado a master, o projeto passa por sua bateria de testes, é buildado e deployado no GitHub Pages, podendo ser visualizado no [endereço mencionado acima](https://github.com/nstseek/google-books-interface/actions).
+Um [processo de CI/CD simples](https://github.com/nstseek/google-books-interface/actions?query=workflow%3ACI%2FCD) foi implementado nesse projeto utilizando as Actions do GitHub. Toda vez que algum commit é adicionado a master, o projeto passa por sua bateria de testes, é buildado e deployado no Firebase, podendo ser visualizado no [endereço mencionado acima](https://github.com/nstseek/google-books-interface/actions).
 
 ## Testes
 
