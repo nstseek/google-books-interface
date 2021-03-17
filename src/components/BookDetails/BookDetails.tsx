@@ -1,11 +1,13 @@
 import { ReactUIContext } from '@nstseek/react-ui/context';
 import axios from 'axios';
+import _ from 'lodash';
 import moment from 'moment';
 import React, { useContext, useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router';
 import routes from 'routes';
 import { Book } from 'typings/api';
 import { addFavorite, removeFavorite } from 'utils/favorites';
+import browserWindow from 'utils/window';
 import './BookDetails.scss';
 
 /**
@@ -19,7 +21,7 @@ const Info: React.FC<{ title?: string; content?: string | number }> = ({
   content
 }) =>
   content ? (
-    <div className='info'>
+    <div className='info' id={'info-' + _.deburr(title.toLowerCase())}>
       <span className='info-title'>{title}</span>
       <span className='info-content'>{content}</span>
     </div>
@@ -66,9 +68,12 @@ const BookDetails: React.FC = () => {
           <div className='book-content'>
             <div className='book-cover'>
               {book.volumeInfo.imageLinks?.thumbnail ? (
-                <img src={book.volumeInfo.imageLinks?.thumbnail} />
+                <img
+                  id='book-thumb'
+                  src={book.volumeInfo.imageLinks?.thumbnail}
+                />
               ) : (
-                <h3>Imagem não disponível</h3>
+                <h3 id='thumb-not-found'>Imagem não disponível</h3>
               )}
             </div>
             <div className='book-details'>
@@ -106,13 +111,16 @@ const BookDetails: React.FC = () => {
               </div>
               <p className='book-desc'>&emsp;{book.volumeInfo.description}</p>
               <div className='buttons'>
-                <button onClick={() => history.push(routes.home)}>
+                <button id='go-back' onClick={() => history.push(routes.home)}>
                   Voltar
                 </button>
-                <button onClick={() => window.open(book.volumeInfo.infoLink)}>
+                <button
+                  id='see-more'
+                  onClick={() => browserWindow.open(book.volumeInfo.infoLink)}>
                   Ver mais
                 </button>
                 <button
+                  id='toggle-favorite'
                   onClick={() => {
                     if (favorite) {
                       removeFavorite(book);
