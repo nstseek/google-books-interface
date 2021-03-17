@@ -3,6 +3,20 @@
 
 Essa aplicação foi desenvolvida para completar o teste técnico proposto para a vaga de desenvolvedor front-end. Você pode visualizar a aplicação funcionando em [https://gb-interface.web.app](https://gb-interface.web.app). Você também pode visualizar o estado das builds e deploys de cada commit visualizando o histórico de commits [aqui](https://github.com/nstseek/google-books-interface/commits/master) ou vendo o estado dos workflows do repositório [aqui](https://github.com/nstseek/google-books-interface/actions).
 
+## Atenção - API do Google Books com OAuth
+
+A API do Google Books provê uma integração com a conta do Google do usuário final utilizando OAuth, permitindo que o usuário tenha várias "Bookshelfs"("estante de livros" em português), inclusive uma para seus livros favoritos, permitindo que a funcionalidade de favoritos guarde seus dados na nuvem e funcione de maneira mais organizada.
+
+Portanto, quando fui configurar as permissões para a autentição OAuth no Google Console, a Google me pediu um relatório de dados, pedindo para indicar o propósito das permissões e como as mesmas serão utilizadas.
+
+Sendo esse um projeto de teste técnico básico, não providenciei nenhuma informação a Google muito menos me coloquei a disposição pra esperar a resposta da Google a respeito das permissões que solicitei.
+
+Diante desse impecilho que não me permite utilizar a API da Google com OAuth para adicionar livros favoritos, criei uma store de livros favoritos localmente no navegador do usuário final, permitindo que o mesmo adicione seus livros favoritos localmente e filtre/pesquise por eles posteriomente.
+
+Deixo claro que gostaria de ter seguido a opção de utilizar a API da Google para controle de favoritos, porém, infelizmente não foi possível e o Front-end acabou com muito tratamento de dados indevido, realizando processamento de dados que deveria ser feito em um backend.
+
+Para não faltar com nenhuma funcionalidade dos requisitos solicitados, como já comentei, implementei uma solução temporária para os favoritos que funciona satisfatoriamente.
+
 ## Tecnologias
 
 Esse projeto foi desenvolvido utilizando algumas das mais recentes tecnologias com o React (como React Hooks), TypeScript, Jest, Enzyme, SCSS, Axios, Puppeteer e algumas outras bibliotecas de minha autoria, como [@nstseek/react-ui](https://www.npmjs.com/package/@nstseek/react-ui).
@@ -25,7 +39,7 @@ Um [processo de CI/CD simples](https://github.com/nstseek/google-books-interface
 
 ## Testes
 
-A cobertura de testes unitários está bem precária por falta de tempo para desenvolvê-la. Como é um projeto de teste apenas, não vejo necessidade de cobrir o projeto inteiro com testes unitários pois demandaria tempo que não tenho disponível.
+A cobertura de testes unitários está relativamente precária por falta de tempo para desenvolvê-la. Como é um projeto de teste apenas, não vejo necessidade de cobrir o projeto inteiro com testes unitários pois demandaria tempo que não tenho disponível.
 
 O resultado dos testes de cada commit é publicado utilizando o GitHub Actions logo após rodarem, como você pode ver [aqui](https://github.com/nstseek/google-books-interface/runs/1804083211).
 
@@ -56,6 +70,10 @@ Executa todos os testes unitários do projeto.
 ### npm run test:watch
 
 Executa todos os testes unitários do projeto em modo de observação.
+
+### npm run test:e2e
+
+Executa todos os testes end-to-end do projeto.
 
 ### npm run test:report
 
