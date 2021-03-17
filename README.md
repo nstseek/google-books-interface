@@ -69,7 +69,7 @@ Executa todos os testes unitários do projeto.
 
 ### npm run test:watch
 
-Executa todos os testes unitários do projeto em modo de observação.
+Executa todos os testes(unitários e end-to-end) do projeto em modo de observação.
 
 ### npm run test:e2e
 
