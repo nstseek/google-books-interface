@@ -25,6 +25,7 @@ const Book: React.FC<Props> = ({ book, openBook, refreshList }) => {
       />
       <h3 className='book-title'>{book.volumeInfo.title}</h3>
       <button
+        className='favorite-book-btn'
         onClick={(event) => {
           event.stopPropagation();
           if (favorite) {
