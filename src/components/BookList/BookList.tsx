@@ -6,6 +6,7 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useHistory } from 'react-router';
 import routes from 'routes';
 import { Book as BookModel, BookParams, BookQueryResponse } from 'typings/api';
+import generateId from 'utils/generateId';
 import './BookList.scss';
 
 const cancelMessage = 'refresh-cancel';
@@ -74,7 +75,9 @@ const BookList: React.FC = () => {
       );
       setBooks(response.data);
       setTotalPages(Math.ceil(response.data.totalItems / pageSize));
-      listContainer.current.scrollTo({ top: 0, behavior: 'smooth' });
+      if (listContainer.current.scrollTo) {
+        listContainer.current.scrollTo({ top: 0, behavior: 'smooth' });
+      }
       setPageLoading(false);
     } catch (err) {
       if (err?.message !== cancelMessage) {
@@ -122,7 +125,9 @@ const BookList: React.FC = () => {
     };
     setBooks(booksResponse);
     setTotalPages(Math.ceil(booksResponse.totalItems / pageSize));
-    listContainer.current.scrollTo({ top: 0, behavior: 'smooth' });
+    if (listContainer.current.scrollTo) {
+      listContainer.current.scrollTo({ top: 0, behavior: 'smooth' });
+    }
     setPageLoading(false);
   };
 
@@ -130,6 +135,7 @@ const BookList: React.FC = () => {
     <div className='BookList'>
       <div className='query'>
         <input
+          id='book-query'
           type='text'
           value={query}
           onChange={(event) => {
@@ -156,7 +162,7 @@ const BookList: React.FC = () => {
           <>
             {books.items.map((book) => (
               <Book
-                key={book.id}
+                key={generateId(book.id)}
                 book={book}
                 openBook={(book) => {
                   sessionStorage.query = query;
@@ -173,17 +179,18 @@ const BookList: React.FC = () => {
             ))}
           </>
         ) : (
-          <h3>
+          <h3 id='query-msg'>
             {query
-              ? 'Nenhum livro encontrado.'
+              ? 'Nenhum livro encontrado'
               : 'Digite algo no campo de pesquisa para ver livros relacionados'}
           </h3>
         )}
       </div>
       {books?.items ? (
         <h5 className='result-info'>
-          {books.totalItems} livros encontrados - Página {actualPage.value} de{' '}
-          {totalPages || 1}
+          {books.totalItems}{' '}
+          {books.totalItems !== 1 ? 'livros encontrados' : 'livro encontrado'} -
+          Página {actualPage.value} de {totalPages || 1}
         </h5>
       ) : null}
       <div className='controls'>
@@ -191,6 +198,7 @@ const BookList: React.FC = () => {
           <div className='navigators'>
             <button
               className='page-switcher'
+              id='previous-page'
               disabled={actualPage.value === 1}
               title='Página anterior'
               onClick={() => {
@@ -221,11 +229,11 @@ const BookList: React.FC = () => {
                   : 'Filtrar por favoritos'}
               </span>
             </button>
-
             <button
               className='page-switcher'
               disabled={actualPage.value === totalPages}
               title='Próxima página'
+              id='next-page'
               onClick={() => {
                 setPageLoading(true);
                 setActualPage((previousState) => {
