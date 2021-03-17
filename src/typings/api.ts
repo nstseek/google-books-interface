@@ -161,7 +161,7 @@ export interface Book {
     accessViewStatus: string;
     quoteSharingAllowed: boolean;
   };
-  searchInfo: {
+  searchInfo?: {
     textSnippet: string;
   };
 }
