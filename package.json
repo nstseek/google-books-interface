@@ -38,7 +38,7 @@
     "test": "react-scripts test --watchAll=false --testPathPattern=\"src\/(?!e2e)\"",
     "test:e2e": "npm run build && node src/e2e/setupE2E.js",
     "test:watch": "react-scripts test",
-    "test:report": "react-scripts test --reporters=jest-junit --reporters=default --watchAll=false",
+    "test:report": "react-scripts test --reporters=jest-junit --reporters=default --watchAll=false --testPathPattern=\"src\/(?!e2e)\"",
     "prettier": "prettier --check \"src/**/*.scss\" \"src/**/*.ts\" \"src/**/*.tsx\"",
     "prettier:fix": "prettier --write \"src/**/*.scss\" \"src/**/*.ts\" \"src/**/*.tsx\"",
     "lint": "eslint src/**/*.tsx src/**/*.ts && stylelint \"**/*.scss\" --config .stylelintrc",
